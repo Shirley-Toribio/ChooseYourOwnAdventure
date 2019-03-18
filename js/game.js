@@ -6,41 +6,80 @@ var game = {
     levels: {
 
         start: {
-            message: "You come across a dark cave",
+            message: "You wake up in an unfamiliar room",
             choices: [
                 {
-                    text: "Enter the cave",
-                    nextLevel: "cave",
+                    text: "Approach door",
+                    nextLevel: "Left",
                 },
 
                 {
-                    text: "Keep on moving",
-                    nextLevel: "field",
+                    text: "Stay in bed",
+                    nextLevel: "Stayed",
                 },
             ]
         },
 
-        cave: {
+        left: {
             background_image: "fire.gif",
             music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+            message: "It opens and a bell rings! You come across a hallway",
             choices: [
                 {
-                    text: "Start over",
-                    nextLevel: "start",
+                    text: "go back to room",
+                    nextLevel: "Start Over",
+                },
+                {
+                    text:"Turn left",
+                    nextLevel: "GuyInside"
+                },
+                {
+                    text:"turn right",
+                    nextLevel:"Window"
                 },
             ]
         },
 
-        field: {
-            message: "Some adventurer you are...",
+        GuyInside: {
+            message: "You run into some guy! What do you do?",
             choices: [
                 {
-                    text: "Start over",
-                    nextLevel: "start",
+                    text: "Fight him",
+                    nextLevel: "Escape",
                 },
+                {
+                    text:"Run!",
+                    nextLevel:"Caught4money"
+                }
             ]
         },
+        Window:{
+            message:'You come across a window that leads to the outside! Steps are coming behind you',
+            choices:[
+                {
+                    text:"Stay",
+                    nextLevel:""
+                },
+                {
+                    text:"Break",
+                    nextLevel:"GetAwayDarn",
+                }
+                ]
+        },
+        Stayed:{
+            message:"The house stays still. No one is inside. You can still leave",
+            Choices:[
+                {
+                   text:"Walk Out Door",
+                   nextLevel:"LateStartOver"
+                },
+                {
+                    text:"Stay",
+                    nextLevel:"SleepStartOver",
+                }
+                ]
+        }
+        
 
     }
 };
